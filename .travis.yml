@@ -13,4 +13,4 @@ before_script:
   - ls
   - chmod u+x Run.command
 
-script: "./Run.command -help"
+script: "./Run.command -run -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS"
