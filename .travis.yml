@@ -1,8 +1,11 @@
-sudo: true
 language: java
 jdk:
   - oraclejdk8
-
+sudo: false
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
 before_script:
   - export CITS_VERSION=1.0-SNAPSHOT
   - export CITS_TAG=v1.0-snapshot
