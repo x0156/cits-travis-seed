@@ -1,3 +1,3 @@
 # travis-cits
 
-cits travis
+seed project to run cits-tests on travis
