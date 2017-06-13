@@ -12,4 +12,4 @@ before_script:
   - cd "cognizant-intelligent-test-scripter-$CITS_VERSION"
   - ls
 
-script: "./run.command -help"
+script: "./Run.command -help"
