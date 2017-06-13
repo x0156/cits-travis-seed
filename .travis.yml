@@ -10,7 +10,7 @@ before_script:
   - curl -O -L "https://github.com/$CITS_REPO/releases/download/$CITS_TAG/cognizant-intelligent-test-scripter-$CITS_VERSION-setup.zip"
   - unzip "cognizant-intelligent-test-scripter-$CITS_VERSION-setup.zip"
   - cd "cognizant-intelligent-test-scripter-$CITS_VERSION"
-  - ls
   - chmod u+x Run.command
+  - ./Run.command -version
 
 script: "./Run.command -run -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS"
