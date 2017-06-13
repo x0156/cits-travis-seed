@@ -1,3 +1,3 @@
 # travis-cits
 
-travis integration using cits
+cits travis
