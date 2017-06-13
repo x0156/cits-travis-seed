@@ -6,5 +6,6 @@ jdk:
 before_script:
   - curl -O -L https://github.com/CognizantQAHub/Cognizant-Intelligent-Test-Scripter/releases/download/v1.0-snapshot/cognizant-intelligent-test-scripter-1.0-SNAPSHOT-setup.zip
   - unzip cognizant-intelligent-test-scripter-1.0-SNAPSHOT-setup.zip
+  - ls
 
 script: "./run.command -help"
