@@ -16,6 +16,7 @@ mkdir -p $CITS_ROOT
 mv $CITS_FNAME-$CITS_VERSION/* $CITS_ROOT
 cat $CITS_ROOT/Run.command > $CITS_ROOT/CITS
 #apply permission
-chmod +x $CITS_ROOT
+chmod +x $CITS_ROOT/CITS
 PATH=$CITS_ROOT:$PATH
+cat $CITS_ROOT/CITS
 CITS -version
