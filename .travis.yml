@@ -23,4 +23,4 @@ before_script:
 script: 
   - "./$CITS -run $TEST  -dont_launch_report"
   - "failed=$(./$CITS  $TEST -latest_exe nofailTests)"
-  - "if [ $failed -ne 0]; then exit 1; fi;"
+  - "if [ $failed -ne 0 ]; then echo $failed Tests failed;exit 1; fi;"
