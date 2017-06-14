@@ -10,12 +10,13 @@ export CITS_ROOT=lib/$CITS_FNAME/$CITS_VERSION
 #download
 curl -O -L "https://github.com/$CITS_REPO/releases/download/$CITS_TAG/$CITS_FNAME-$CITS_VERSION-setup.zip"
 #extract
-unzip $CITS_FNAME-$CITS_VERSION-setup.zip
+unzip $CITS_FNAME-$CITS_VERSION-setup.zip >> unzip_log.txt
 #create install dir
 mkdir -p $CITS_ROOT
 mv $CITS_FNAME-$CITS_VERSION/* $CITS_ROOT
 cat $CITS_ROOT/Run.command > $CITS_ROOT/CITS
 #apply permission
 chmod +x $CITS_ROOT/CITS
-export PATH=$CITS_ROOT:$PATH
+PATH=$CITS_ROOT:$PATH
+export PATH
 CITS -version
