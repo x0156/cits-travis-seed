@@ -18,11 +18,11 @@ before_install:
   - ./$CITS -version
  
 before_script:
-  - "echo 'echo $*;exit 1;' > fail"
+  - "echo 'echo $*;exit 1;' > fail;chmod u+x fail;"
   - export TEST="-project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS"
   
 script: 
-  - "./$CITS -run $TEST  -dont_launch_report"
+  - "./$CITS -run $TEST  -dont_launch_report -standalone_report"
   - "export failed=$(./$CITS  $TEST -latest_exe nofailTests)"
   - "export report=$(./$CITS  $TEST -latest_exe_loc)"
 
