@@ -7,7 +7,7 @@ addons:
     packages:
       - oracle-java8-installer
 before_install:
-  - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/x0156-patch-1/install | bash 
+  - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/x0156-patch-1/install.sh | bash 
   - export CITS_VERSION=1.0-SNAPSHOT
   - export CITS_TAG=v1.0-snapshot
   - export CITS_REPO=CognizantQAHub/Cognizant-Intelligent-Test-Scripter
