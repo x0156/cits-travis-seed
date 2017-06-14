@@ -9,7 +9,6 @@ REPO=CognizantQAHub/Cognizant-Intelligent-Test-Scripter
 ROOT=$HOME/lib/cits
 BINARY=$HOME/bin/CITS
 
-#PATH=$CITS_ROOT:$PATH
 #download
 curl -O -L "https://github.com/$REPO/releases/download/$TAG/$NAME-$VERSION-setup.zip"
 #extract
@@ -18,9 +17,8 @@ unzip $NAME-$VERSION-setup.zip > unzip_log.txt
 mkdir -p $ROOT
 mkdir -p $HOME/bin
 mv $NAME-$VERSION/* $ROOT
-#cat $ROOT/Run.command > $ROOT/CITS
 #create binary
-echo "./$ROOT/Run.command $*" > $BINARY
+echo ".$ROOT/Run.command $*" > $BINARY
 #apply permission
 chmod u+x $BINARY
 echo "$NAME from $REPO installed in $ROOT";echo "version:"
