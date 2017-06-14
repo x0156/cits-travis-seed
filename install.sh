@@ -12,7 +12,7 @@ curl -O -L "https://github.com/$CITS_REPO/releases/download/$CITS_TAG/$CITS_FNAM
 #extract
 unzip $CITS_FNAME-$CITS_VERSION-setup.zip
 #create install dir
-sudo mkdir -p $CITS_ROOT
+mkdir -p $CITS_ROOT
 mv $CITS_FNAME-$CITS_VERSION/* $CITS_ROOT
 cat $CITS_ROOT/Run.command > $CITS_ROOT/CITS
 #permission
