@@ -20,6 +20,8 @@ mkdir -p $HOME/bin
 mv $NAME-$VERSION/* $ROOT
 #create binary
 echo $ROOT/Run.command "$@" > $BINARY
+echo "cat $BINARY"
+cat $BINARY
 #apply permission
 chmod u+x $BINARY
 chmod u+x $ROOT/Run.command
