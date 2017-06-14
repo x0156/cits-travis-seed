@@ -13,6 +13,7 @@ unzip $CITS_FNAME-$CITS_VERSION-setup.zip
 mkdir -p $CITS_ROOT
 mv $CITS_FNAME-$CITS_VERSION/* $CITS_ROOT
 cat $CITS_ROOT/Run.command > $CITS_ROOT/CITS
+#permission
 chmod +x $CITS_ROOT
 PATH=$CITS_ROOT:$PATH
 CITS -version
