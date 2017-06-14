@@ -17,4 +17,5 @@ before_install:
   - ./Run.command -version
   
   
-script: "./Run.command -run -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS" && "./Run.command -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS -latest_exe nofailTests"
+script: "./Run.command -run -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS"
+script: "./Run.command -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS -latest_exe nofailTests"
