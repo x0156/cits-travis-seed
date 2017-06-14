@@ -17,5 +17,5 @@ mv $CITS_FNAME-$CITS_VERSION/* $CITS_ROOT
 cat $CITS_ROOT/Run.command > $CITS_ROOT/CITS
 #apply permission
 chmod +x $CITS_ROOT/CITS
-PATH=$CITS_ROOT:$PATH
+export PATH=$CITS_ROOT:$PATH
 CITS -version
