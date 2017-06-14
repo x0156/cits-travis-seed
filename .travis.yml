@@ -27,5 +27,5 @@ script:
   - "export report=$(./$CITS  $TEST -latest_exe_loc)"
 
 after_script:
-  - "echo REPORTS\(in $report\):;ls $report"
+  -  echo "REPORTS(in $report):";ls $report
   - "if [ $failed -ne 1 ]; then (./fail $failed Test/s failed); fi"
