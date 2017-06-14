@@ -20,7 +20,7 @@ mv $CITS_FNAME-$CITS_VERSION/* $CITS_ROOT
 cat $CITS_ROOT/Run.command > $CITS_ROOT/CITS
 echo "./$CITS_ROOT/Run.command $*" > $CITS_BIN
 #apply permission
-chmod +x $CITS_ROOT/CITS
+chmod +x $CITS_BIN
 echo "$CITS_FNAME installed in $CITS_ROOT"
 echo "version:"
 CITS -version
