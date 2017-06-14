@@ -8,7 +8,8 @@ addons:
       #- oracle-java8-installer
 before_install:
   - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/x0156-patch-1/install.sh | bash
-  - "cat sourcefile;. ./sourcefile"
+  # install the sourcefile to update PATH and CIST_ROOT (./lib/cits/)
+  - . ./sourcefile
   
 before_script:
   - "echo 'echo $*;exit 1;' > fail;chmod u+x fail;"
