@@ -17,7 +17,7 @@ before_install:
   - chmod u+x Run.command
   - ./Run.command -version
  
- before_script:
+before_script:
   - export TEST=-project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase
   
 script: 
