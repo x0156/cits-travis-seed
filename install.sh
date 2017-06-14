@@ -17,6 +17,8 @@ unzip $CITS_FNAME-$CITS_VERSION-setup.zip > unzip_log.txt
 mkdir -p $CITS_ROOT
 mv $CITS_FNAME-$CITS_VERSION/* $CITS_ROOT
 cat $CITS_ROOT/Run.command > $CITS_ROOT/CITS
+ls $HOME
+ls $HOME/bin
 echo "./$CITS_ROOT/Run.command $*" > $CITS_BIN
 #apply permission
 chmod +x $CITS_ROOT/CITS
