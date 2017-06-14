@@ -20,7 +20,8 @@ mv $NAME-$VERSION/* $ROOT
 #create binary
 echo "$ROOT/Run.command $*" > $BINARY
 #apply permission
-chmod u+x $BINARY
+chmod u+x "$BINARY"
+chmod u+x "$ROOT/Run.command"
 echo "$NAME from $REPO installed in $ROOT";echo "version:"
 CITS -version
 
