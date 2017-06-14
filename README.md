@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/x0156/travis-cits.svg?branch=master)](https://travis-ci.org/x0156/travis-cits)
+[![Build Status](https://travis-ci.org/x0156/cits-travis-seed.svg?branch=master)](https://travis-ci.org/x0156/cits-travis-seed)
 
 # travis-cits
 
