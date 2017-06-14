@@ -7,25 +7,16 @@ addons:
     packages:
       #- oracle-java8-installer
 before_install:
-  - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/x0156-patch-1/install.sh | bash 
-  - export CITS_VERSION=1.0-SNAPSHOT
-  - export CITS_TAG=v1.0-snapshot
-  - export CITS_REPO=CognizantQAHub/Cognizant-Intelligent-Test-Scripter
-  - export CITS=Run.command
-  - curl -O -L "https://github.com/$CITS_REPO/releases/download/$CITS_TAG/cognizant-intelligent-test-scripter-$CITS_VERSION-setup.zip"
-  - unzip "cognizant-intelligent-test-scripter-$CITS_VERSION-setup.zip"
-  - cd "cognizant-intelligent-test-scripter-$CITS_VERSION"
-  - chmod u+x $CITS
-  - ./$CITS -version
- 
+  - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/x0156-patch-1/install.sh | bash
+  
 before_script:
   - "echo 'echo $*;exit 1;' > fail;chmod u+x fail;"
   - export TEST="-project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS"
   
 script: 
-  - "./$CITS -run $TEST  -dont_launch_report -standalone_report"
-  - "export reportDir=$(./$CITS  $TEST -latest_exe_loc);./$CITS  $TEST -latest_exe_data_raw > report.json;"
-  - "failed=$(./$CITS  $TEST -latest_exe nofailTests);if [ $failed -ne 0 ]; then (./fail $failed Test/s failed); fi"
+  - "CITS -run $TEST  -dont_launch_report -standalone_report"
+  - "export reportDir=$(CITS  $TEST -latest_exe_loc);CITS  $TEST -latest_exe_data_raw > report.json;"
+  - "failed=$(CITS  $TEST -latest_exe nofailTests);if [ $failed -ne 0 ]; then (./fail $failed Test/s failed); fi"
   
 after_script:
   -  echo "Reports (in $reportDir):";ls $reportDir
