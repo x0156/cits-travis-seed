@@ -14,7 +14,7 @@ before_install:
   - curl -O -L "https://github.com/$CITS_REPO/releases/download/$CITS_TAG/cognizant-intelligent-test-scripter-$CITS_VERSION-setup.zip"
   - unzip "cognizant-intelligent-test-scripter-$CITS_VERSION-setup.zip"
   - cd "cognizant-intelligent-test-scripter-$CITS_VERSION"
-  - chmod u+x Run.command
+  - chmod u+x $CITS
   - ./$CITS -version
  
 before_script:
@@ -25,7 +25,6 @@ script:
   - "./$CITS -run $TEST  -dont_launch_report -standalone_report"
   - "export failed=$(./$CITS  $TEST -latest_exe nofailTests)"
   - "export report=$(./$CITS  $TEST -latest_exe_loc)"
-
+  - "if [ $failed -ne 1 ]; then (./fail $failed Test/s failed); fi"
 after_script:
   -  echo "REPORTS(in $report):";ls $report
-  - "if [ $failed -ne 1 ]; then (./fail $failed Test/s failed); fi"
