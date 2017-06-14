@@ -6,7 +6,7 @@ addons:
   apt:
     packages:
       - oracle-java8-installer
-before_script:
+before_install:
   - export CITS_VERSION=1.0-SNAPSHOT
   - export CITS_TAG=v1.0-snapshot
   - export CITS_REPO=CognizantQAHub/Cognizant-Intelligent-Test-Scripter
@@ -15,5 +15,8 @@ before_script:
   - cd "cognizant-intelligent-test-scripter-$CITS_VERSION"
   - chmod u+x Run.command
   - ./Run.command -version
-
-script: "./Run.command -run -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS"
+  
+  
+script: 
+  - "./Run.command -run -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS"
+  - "./Run.command -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS -latest_exe nofailTests"
