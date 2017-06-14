@@ -8,7 +8,7 @@ addons:
       #- oracle-java8-installer
 before_install:
   - export projectDir=$(pwd)
-  - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/install2/install.sh | bash
+  - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/master/install.sh | bash
   # install the sourcefile to update PATH and CIST_ROOT (./lib/cits/)
   - . ./sourcefile
   
