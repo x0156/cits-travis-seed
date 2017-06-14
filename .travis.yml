@@ -23,8 +23,8 @@ before_script:
   
 script: 
   - "./$CITS -run $TEST  -dont_launch_report -standalone_report"
-  - "export failed=$(./$CITS  $TEST -latest_exe nofailTests)"
-  - "export report=$(./$CITS  $TEST -latest_exe_loc)"
-  - "if [ $failed -ne 1 ]; then (./fail $failed Test/s failed); fi"
+  - "export reportDir=$(./$CITS  $TEST -latest_exe_loc);./$CITS  $TEST -latest_exe_data_raw > report.json;"
+  - "failed=$(./$CITS  $TEST -latest_exe nofailTests);if [ $failed -ne 0 ]; then (./fail $failed Test/s failed); fi"
+  
 after_script:
-  -  echo "REPORTS(in $report):";ls $report
+  -  echo "Reports (in $reportDir):";ls $reportDir
