@@ -15,5 +15,6 @@ before_script:
   - cd "cognizant-intelligent-test-scripter-$CITS_VERSION"
   - chmod u+x Run.command
   - ./Run.command -version
-
+  
+  
 script: "./Run.command -run -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS" || "./Run.command -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS -latest_exe nofailTests"
