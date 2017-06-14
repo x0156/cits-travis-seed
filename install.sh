@@ -15,10 +15,9 @@ curl -O -L "https://github.com/$CITS_REPO/releases/download/$CITS_TAG/$CITS_FNAM
 unzip $CITS_FNAME-$CITS_VERSION-setup.zip > unzip_log.txt
 #create install dir
 mkdir -p $CITS_ROOT
+mkdir -p $HOME/bin
 mv $CITS_FNAME-$CITS_VERSION/* $CITS_ROOT
 cat $CITS_ROOT/Run.command > $CITS_ROOT/CITS
-ls $HOME
-ls $HOME/bin
 echo "./$CITS_ROOT/Run.command $*" > $CITS_BIN
 #apply permission
 chmod +x $CITS_ROOT/CITS
