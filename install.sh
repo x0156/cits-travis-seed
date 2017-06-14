@@ -18,5 +18,4 @@ cat $CITS_ROOT/Run.command > $CITS_ROOT/CITS
 #apply permission
 chmod +x $CITS_ROOT/CITS
 PATH=$CITS_ROOT:$PATH
-cat $CITS_ROOT/CITS
 CITS -version
