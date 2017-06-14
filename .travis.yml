@@ -20,3 +20,4 @@ before_install:
 script: 
   - "./Run.command -run -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS"
   - "./Run.command -project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase -browser PhantomJS -latest_exe nofailTests"
+  - exit 1
