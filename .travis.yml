@@ -15,10 +15,10 @@ before_install:
   - unzip "cognizant-intelligent-test-scripter-$CITS_VERSION-setup.zip"
   - cd "cognizant-intelligent-test-scripter-$CITS_VERSION"
   - chmod u+x Run.command
-  - ./Run.command -version
+  - ./$CITS -version
  
 before_script:
-  - export TEST=-project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase
+  - export TEST="-project_location Projects/DemoProject -scenario BasicFeatures -testcase DemoTestCase"
   
 script: 
   - "./$CITS -run $TEST -browser PhantomJS"
