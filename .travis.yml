@@ -7,6 +7,7 @@ addons:
     packages:
       #- oracle-java8-installer
 before_install:
+  - export projectDir=$(pwd)
   - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/x0156-patch-1/install.sh | bash
   # install the sourcefile to update PATH and CIST_ROOT (./lib/cits/)
   - . ./sourcefile
@@ -14,8 +15,7 @@ before_install:
 before_script:
   - "echo 'echo $*;exit 1;' > fail;chmod u+x fail;"
   # export TEST="-project_location Projects/Bing -release early -testset smoke"
-  - "ls;ls Projects/Bing"
-  - export TEST="-project_location Projects/Bing -scenario basic_search -testcase cortanna -browser PhantomJS"
+  - export TEST="-project_location $projectDir/Projects/Bing -scenario basic_search -testcase cortanna -browser PhantomJS"
   
 script: 
   - "CITS -run $TEST  -dont_launch_report -standalone_report"
@@ -23,5 +23,4 @@ script:
   - "failed=$(CITS  $TEST -latest_exe nofailTests);if [ $failed -ne 0 ]; then (./fail $failed Test/s failed); fi"
   
 after_script:
-  - ls
   - echo "Reports (in $reportDir):";ls $reportDir
