@@ -1,0 +1,42 @@
+<Root type="OR" ref="Bing">
+  <Page title="Bing" ref="Bing">
+    <ObjectGroup ref="Enter your search term">
+      <Object frame="" ref="Enter your search term">
+        <Property value="q" ref="name" pref="1"/>
+        <Property value="sb_form_q" ref="id" pref="2"/>
+        <Property value="" ref="link_text" pref="3"/>
+        <Property value="//input[@title='Enter your search term']" ref="relative_xpath" pref="4"/>
+        <Property value="(/html/body/table/tbody/tr/td/div/div[2]/div[2]/form/div/input)[1]" ref="xpath" pref="5"/>
+        <Property value="b_searchbox" ref="class" pref="6"/>
+        <Property value="#sb_form_q" ref="css" pref="7"/>
+        <Property value="search" ref="type" pref="8"/>
+      </Object>
+    </ObjectGroup>
+    <ObjectGroup ref="go">
+      <Object frame="" ref="go">
+        <Property value="go" ref="name" pref="1"/>
+        <Property value="sb_form_go" ref="id" pref="2"/>
+        <Property value="" ref="link_text" pref="3"/>
+        <Property value="//input[@title='Search']" ref="relative_xpath" pref="4"/>
+        <Property value="/html/body/table/tbody/tr/td/div/div[2]/div[2]/form/div/input[2]" ref="xpath" pref="5"/>
+        <Property value="b_searchboxSubmit" ref="class" pref="6"/>
+        <Property value="#sb_form_go" ref="css" pref="7"/>
+        <Property value="submit" ref="type" pref="8"/>
+      </Object>
+    </ObjectGroup>
+  </Page>
+  <Page title="cortanna - Bing" ref="cortanna">
+    <ObjectGroup ref="rms_img">
+      <Object frame="" ref="rms_img">
+        <Property value="" ref="name" pref="1"/>
+        <Property value="" ref="id" pref="2"/>
+        <Property value="" ref="link_text" pref="3"/>
+        <Property value="(//img[@alt=' '])[3]" ref="relative_xpath" pref="4"/>
+        <Property value="/html/body/div[2]/ol[2]/li/ul/li[2]/span/a/div/div/div/div/img" ref="xpath" pref="5"/>
+        <Property value="rms_img" ref="class" pref="6"/>
+        <Property value="html > body > #b_content > #b_context > li.b_ans > ul.b_vList > li:nth-of-type(1) > span.b_slyGridItem > a > div.b_imagePair.square_m reverse > div.inner > div.cico > div.rms_img > img.rms_img" ref="css" pref="7"/>
+        <Property value="img" ref="type" pref="8"/>
+      </Object>
+    </ObjectGroup>
+  </Page>
+</Root>
