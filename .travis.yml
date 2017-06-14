@@ -22,4 +22,9 @@ before_script:
   
 script: 
   - "./$CITS -run $TEST  -dont_launch_report"
-  - "failed=$(./$CITS  $TEST -latest_exe nofailTests);if [ $failed -ne 0 ]; then echo $failed Test/s failed...exit 1;exit 1; fi;"
+  - "export failed=$(./$CITS  $TEST -latest_exe nofailTests)"
+  - "export report=$(./$CITS  $TEST -latest_exe_loc)"
+
+after_script:
+  - "echo REPORTS(in $report):;ls $report"
+  - "if [ $failed -ne 0 ]; then echo $failed Test/s failed...exit 1;exit 1; fi;"
