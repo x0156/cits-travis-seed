@@ -19,7 +19,7 @@ mkdir -p $HOME/bin
 #install
 mv $NAME-$VERSION/* $ROOT
 #create binary
-echo $ROOT/Run.command "$@" > $BINARY
+echo "$ROOT/Run.command $@" > $BINARY
 echo "cat $BINARY"
 cat $BINARY
 #apply permission
