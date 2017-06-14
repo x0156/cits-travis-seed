@@ -1,4 +1,6 @@
-set -e
+#!/bin/bash
+
+set -x
 
 CITS_FNAME=cognizant-intelligent-test-scripter
 CITS_VERSION=1.0-SNAPSHOT
