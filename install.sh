@@ -1,5 +1,3 @@
-#!/bin/bash
-
 set -e
 
 CITS_FNAME=cognizant-intelligent-test-scripter
