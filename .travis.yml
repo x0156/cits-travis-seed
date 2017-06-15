@@ -12,6 +12,7 @@ env:
     - projectDir=$(pwd)
   matrix:
     - TEST="-project_location $projectDir/Projects/Bing -scenario basic_search -testcase cortanna -browser PhantomJS"
+    - TEST="-project_location Projects/Bing -release early -testset smoke"
 
 before_install:
   #- export projectDir=$(pwd)
