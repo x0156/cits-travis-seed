@@ -6,6 +6,10 @@ addons:
   apt:
     packages:
       #- oracle-java8-installer
+      #- google-chrome-stable
+env:
+  - TEST="-project_location $projectDir/Projects/Bing -scenario basic_search -testcase cortanna -browser PhantomJS"
+
 before_install:
   - export projectDir=$(pwd)
   - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/master/install.sh | bash
@@ -14,8 +18,8 @@ before_install:
   
 before_script:
   - "echo 'echo $*;exit 1;' > fail;chmod u+x fail;"
-  # export TEST="-project_location Projects/Bing -release early -testset smoke"
-  - export TEST="-project_location $projectDir/Projects/Bing -scenario basic_search -testcase cortanna -browser PhantomJS"
+  #- export TEST="-project_location Projects/Bing -release early -testset smoke"
+  #- export TEST="-project_location $projectDir/Projects/Bing -scenario basic_search -testcase cortanna -browser PhantomJS"
   
 script: 
   - "CITS -run $TEST  -dont_launch_report -standalone_report"
