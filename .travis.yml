@@ -12,8 +12,8 @@ env:
     - workingDir=$(pwd)
     - projectBing=$(pwd)/Projects/Bing
   matrix:
-    - TEST="-scenario basic_search -testcase cortanna -browser PhantomJS -project_location $projectBing"
-    - TEST="-release early -testset smoke -project_location $projectBing"    
+    - TEST="-scenario basic_search -testcase cortanna -browser PhantomJS -project_location $(pwd)/Projects/Bing"
+    - TEST="-release early -testset smoke -project_location $(pwd)/Projects/Bing"    
 
 before_install:
   - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/master/install.sh | bash
