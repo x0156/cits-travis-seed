@@ -1,4 +1,9 @@
 language: java
+
+os:
+  - linux
+  - osx
+
 jdk:
   - oraclejdk8
 sudo: false
@@ -12,15 +17,8 @@ env:
     - workingDir=$(pwd)
     - projectBing="$(pwd)/Projects/Bing"
   matrix:
-    include:
-        - os: linux
-          env: TEST="-scenario basic_search -testcase cortanna -browser PhantomJS -project_location $projectBing"
-        - os: linux
-          env: TEST="-release early -testset smoke -project_location $projectBing"
-        - os: osx
-          env: TEST="-scenario basic_search -testcase cortanna -browser PhantomJS -project_location $projectBing"
-        - os: osx
-          env: TEST="-release early -testset smoke -project_location $projectBing"
+    - TEST="-scenario basic_search -testcase cortanna -browser PhantomJS -project_location $projectBing"
+    - TEST="-release early -testset smoke -project_location $projectBing"
 
 before_install:
   - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/master/install.sh | bash
