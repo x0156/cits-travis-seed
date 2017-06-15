@@ -8,13 +8,16 @@ addons:
       #- oracle-java8-installer
       #- google-chrome-stable
 env:
-  - TEST="-project_location $projectDir/Projects/Bing -scenario basic_search -testcase cortanna -browser PhantomJS"
+  global:
+    - projectDir=$(pwd)
+  matrix:
+    - TEST="-project_location $projectDir/Projects/Bing -scenario basic_search -testcase cortanna -browser PhantomJS"
 
 before_install:
-  - export projectDir=$(pwd)
+  #- export projectDir=$(pwd)
   - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/master/install.sh | bash
   # install the sourcefile to update PATH and CIST_ROOT (./lib/cits/)
-  - . ./sourcefile
+  #- . ./sourcefile
   
 before_script:
   - "echo 'echo $*;exit 1;' > fail;chmod u+x fail;"
