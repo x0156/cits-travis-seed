@@ -36,5 +36,16 @@
     "attributes" : [ ],
     "tags" : [ ]
   } ],
-  "data" : [ ]
+  "data" : [ {
+    "id" : "basic_search#cortanna",
+    "name" : "cortanna",
+    "tags" : [ ],
+    "attributes" : [ {
+      "name" : "type",
+      "value" : "testcase"
+    }, {
+      "name" : "scenario",
+      "value" : "basic_search"
+    } ]
+  } ]
 }
