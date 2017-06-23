@@ -17,7 +17,7 @@ env:
     - workingDir=$(pwd)    
   matrix:
     - TEST=smoke
-    - TEST=basic-search-cortanna
+    - TEST=basic_search_cortanna
 
 before_install:
   # source the env.sh script to get exported variables

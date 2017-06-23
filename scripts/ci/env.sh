@@ -18,7 +18,7 @@ function  setEnvVar() {
   export ${name}="${value}"
 }
 
-setEnvVar projectBing="$workingDir/Projects/Bing"  
+setEnvVar projectBing "$workingDir/Projects/Bing"  
 
 setEnvVar smoke "-project_location $projectBing -release early -testset smoke"
-setEnvVar basic-search-cortanna "-project_location $projectBing -scenario basic_search -testcase cortanna -browser PhantomJS"
+setEnvVar basic_search_cortanna "-project_location $projectBing -scenario basic_search -testcase cortanna -browser PhantomJS"
