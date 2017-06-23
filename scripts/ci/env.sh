@@ -15,7 +15,7 @@ function  setEnvVar() {
   if [[ ${print} == "print" ]]; then
     echo ${name}=${value}
   fi
-  export ${name}=${value}
+  export ${name}="${value}"
 }
 
 setEnvVar projectBing="$workingDir/Projects/Bing"  
