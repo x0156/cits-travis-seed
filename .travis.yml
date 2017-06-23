@@ -14,19 +14,20 @@ addons:
       #- google-chrome-stable
 env:
   global:
-    - workingDir=$(pwd)
-    - projectBing="$(pwd)/Projects/Bing"
+    - workingDir=$(pwd)    
   matrix:
-    - TEST="-scenario basic_search -testcase cortanna -browser PhantomJS -project_location $projectBing"
-    - TEST="-release early -testset smoke -project_location $projectBing"
+    - TEST=smoke
+    - TEST=basic_search_cortanna
 
 before_install:
+  # source the env.sh script to get exported variables
+  - source ./scripts/ci/env.sh print
   - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/master/install.sh | bash
-  # install the sourcefile to update PATH and CIST_ROOT (./lib/cits/)
   - . ./sourcefile
   
 before_script:
   - "echo 'echo $*;exit 1;' > fail;chmod u+x fail;"
+  - TEST=$(resolve $TEST)
  
 script: 
   - "CITS -run $TEST  -dont_launch_report -standalone_report"
