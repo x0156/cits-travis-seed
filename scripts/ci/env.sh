@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -u -e -o
+set -e
 
 function resolve(){
     eval echo \$$1
