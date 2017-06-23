@@ -3,8 +3,8 @@
 set -e
 
 NAME=cognizant-intelligent-test-scripter
-VERSION=1.0-SNAPSHOT
-TAG=v1.0-snapshot
+VERSION=1.0
+TAG=1.0
 REPO=CognizantQAHub/Cognizant-Intelligent-Test-Scripter
 ROOT=$HOME/lib/cits
 BINARY=$HOME/bin/CITS

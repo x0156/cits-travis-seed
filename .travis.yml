@@ -22,7 +22,7 @@ env:
 before_install:
   # source the env.sh script to get exported variables
   - source ./scripts/ci/env.sh print
-  - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/master/install.sh | bash
+  - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/$TRAVIS_BRANCH/install.sh | bash
   - . ./sourcefile
   
 before_script:
