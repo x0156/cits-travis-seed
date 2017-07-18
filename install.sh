@@ -28,9 +28,9 @@ CITS -version
 
 echo "installing chromedriver"
 curl -O -L "http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip"
-unzip  chromedriver_linux64.zip
-rm chromedriver_linux64.zip
-mv -f chromedriver $HOME/lib
+unzip chromedriver_linux64.zip >> unzip_log.txt
+ls
+mv chromedriver $HOME/lib
 chmod +x $HOME/lib/chromedriver
 ln -s $HOME/lib/chromedriver $CHROME_DRIVER_BIN
 
