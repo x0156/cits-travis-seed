@@ -8,7 +8,7 @@ TAG=v1.0.1
 REPO=x0156/Cognizant-Intelligent-Test-Scripter
 ROOT=$HOME/lib/cits
 BINARY=$HOME/bin/CITS
-
+CHROME_DRIVER_VERSION=2.30
 #download
 curl -O -L "https://github.com/$REPO/releases/download/$TAG/$NAME-$VERSION-setup.zip"
 #extract
@@ -18,13 +18,20 @@ mkdir -p $ROOT
 mkdir -p $HOME/bin
 #install
 mv $NAME-$VERSION/* $ROOT
-#create binary
-echo "$ROOT/Run.command \$@" > $BINARY
 #apply permission
-chmod u+x $BINARY
-chmod u+x $ROOT/Run.command
+chmod +x $ROOT/Run.command
+#create binary
+ln -s $ROOT/Run.command $BINARY
 echo "$NAME from $REPO installed in $ROOT";echo "version:"
 CITS -version
+
+echo "installing chromedriver"
+curl -O -L "http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip"
+unzip  chromedriver_linux64.zip
+rm chromedriver_linux64.zip
+mv -f ~/chromedriver $HOME/lib
+chmod +x $HOME/lib/chromedriver
+ln -s $HOME/lib/chromedriver $CHROME_DRIVER_BIN
 
 # creating sourcefile
 echo "export CITS_VERSION=$VERSION" > sourcefile

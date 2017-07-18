@@ -17,8 +17,10 @@ function  setEnvVar() {
   fi
   export ${name}="${value}"
 }
- 
+
+setEnvVar CHROME_DRIVER_BIN $HOME/bin/chromedriver
 setEnvVar CHROME_BIN google-chrome-stable
+setEnvVar citsEnv "driver.ChromeDriverPath=$CHROME_DRIVER_BIN;user.gh.token=$GITHUB_TOKEN"
 
 setEnvVar projectBing "$workingDir/Projects/Bing" 
 setEnvVar smoke "-project_location $projectBing -release early -testset smoke"
