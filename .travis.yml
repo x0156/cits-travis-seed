@@ -33,7 +33,9 @@ install:
   - mv -f ~/chromedriver $HOME/lib
   - chmod +x $HOME/lib/chromedriver
   - ln -s $HOME/lib/chromedriver $HOME/bin/chromedriver
-  - export citsEnv "app.driver.ChromeDriverPath=$HOME/bin/chromedriver;gh.token=$GITHUB_TOKEN"
+  - env app.driver.ChromeDriverPath=$HOME/bin/chromedriver
+  - env app.user.gh.token=$GITHUB_TOKEN
+    
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
@@ -42,7 +44,7 @@ before_script:
   - TEST=$(resolve $TEST)
  
 script: 
-  - "CITS -run $TEST  -dont_launch_report -standalone_report -setEnv $citsEnv"
+  - "CITS -run $TEST  -dont_launch_report -standalone_report"
   - "export reportDir=$(CITS  $TEST -latest_exe_loc);CITS  $TEST -latest_exe_data_raw > report.json;"
   - "failed=$(CITS  $TEST -latest_exe nofailTests);if [ $failed -ne 0 ]; then (./fail $failed Test/s failed); fi"
   
