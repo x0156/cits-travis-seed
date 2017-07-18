@@ -17,8 +17,9 @@ function  setEnvVar() {
   fi
   export ${name}="${value}"
 }
+ 
+setEnvVar CHROME_BIN google-chrome-stable
 
-setEnvVar projectBing "$workingDir/Projects/Bing"  
-
+setEnvVar projectBing "$workingDir/Projects/Bing" 
 setEnvVar smoke "-project_location $projectBing -release early -testset smoke"
-setEnvVar basic_search_cortanna "-project_location $projectBing -scenario basic_search -testcase cortanna -browser PhantomJS"
+setEnvVar basic_search_cortanna "-project_location $projectBing -scenario basic_search -testcase cortanna -browser Chrome"

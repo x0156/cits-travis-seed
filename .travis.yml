@@ -8,6 +8,7 @@ jdk:
   
 sudo: false
 addons:
+  chrome: stable
   apt:
     packages:
       #- oracle-java8-installer
@@ -24,8 +25,19 @@ before_install:
   - source ./scripts/ci/env.sh print
   - curl -sL https://raw.githubusercontent.com/x0156/cits-travis-seed/$TRAVIS_BRANCH/install.sh | bash
   - . ./sourcefile
-  
+
+install:
+  - wget -N http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip -P ~/
+  - unzip ~/chromedriver_linux64.zip -d ~/
+  - rm ~/chromedriver_linux64.zip
+  - mv -f ~/chromedriver $HOME/lib
+  - chmod +x $HOME/lib/chromedriver
+  - ln -s $HOME/lib/chromedriver $HOME/bin/chromedriver
+
 before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
   - "echo 'echo $*;exit 1;' > fail;chmod u+x fail;"
   - TEST=$(resolve $TEST)
  
