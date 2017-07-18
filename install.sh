@@ -18,10 +18,11 @@ mkdir -p $ROOT
 mkdir -p $HOME/bin
 #install
 mv $NAME-$VERSION/* $ROOT
-#apply permission
-chmod +x $ROOT/Run.command
 #create binary
-ln -s $ROOT/Run.command $BINARY
+echo "$ROOT/Run.command \$@" > $BINARY
+#apply permission
+chmod +x $BINARY
+chmod +x $ROOT/Run.command
 echo "$NAME from $REPO installed in $ROOT";echo "version:"
 CITS -version
 
