@@ -3,7 +3,7 @@
 set -e
 
 NAME=cognizant-intelligent-test-scripter
-VERSION=1.0.1
+VERSION=1.0
 TAG=v1.0.1
 REPO=x0156/Cognizant-Intelligent-Test-Scripter
 ROOT=$HOME/lib/cits
