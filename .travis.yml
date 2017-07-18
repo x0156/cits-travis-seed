@@ -33,8 +33,7 @@ install:
   - mv -f ~/chromedriver $HOME/lib
   - chmod +x $HOME/lib/chromedriver
   - ln -s $HOME/lib/chromedriver $HOME/bin/chromedriver
-  - env app.driver.ChromeDriverPath=$HOME/bin/chromedriver
-  - echo ${app.driver.ChromeDriverPath}
+  - env app.driver.ChromeDriverPath=$HOME/bin/chromedriver | bash 
 
 before_script:
   - export DISPLAY=:99.0
