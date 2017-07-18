@@ -33,6 +33,7 @@ install:
   - mv -f ~/chromedriver $HOME/lib
   - chmod +x $HOME/lib/chromedriver
   - ln -s $HOME/lib/chromedriver $HOME/bin/chromedriver
+  - export app.driver.ChromeDriverPath=$HOME/bin/chromedriver
 
 before_script:
   - export DISPLAY=:99.0
