@@ -2,10 +2,6 @@
 
 set -e
 
-function resolve(){
-    eval echo \$$1
-}
-
 # sets and optionally prints environmental variable
 # usage: setEnvVar variableName variableValue
 function  setEnvVar() {
