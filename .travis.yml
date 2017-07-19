@@ -9,16 +9,18 @@ jdk:
 sudo: false
 addons:
   chrome: stable
-  apt:
-    packages:
-      #- oracle-java8-installer
-      #- google-chrome-stable
+
 env:
   global:
     - workingDir=$(pwd)    
   matrix:
-    - TEST=smoke
-    - TEST=basic_search_cortanna
+    - MODE=e2e_cits TEST=smoke
+    - MODE=e2e_cits TEST=basic_search_cortanna
+
+jobs:
+  include:
+    - stage: Deploy
+      env: "DEPLOY_MODE=build"
 
 before_install:
   # source the env.sh script to get exported variables
@@ -33,12 +35,9 @@ install:
  
 before_script:  
   - "echo 'echo $*;exit 1;' > fail;chmod u+x fail;"
-  - TEST=$(resolve $TEST)
  
-script: 
-  - "CITS -run $TEST  -dont_launch_report -standalone_report -setEnv $citsEnv"
-  - "export reportDir=$(CITS  $TEST -latest_exe_loc);CITS  $TEST -latest_exe_data_raw > report.json;"
-  - "failed=$(CITS  $TEST -latest_exe nofailTests);if [ $failed -ne 0 ]; then (./fail $failed Test/s failed); fi"
+script:
+  - ./scripts/ci/travis-script.sh
   
 after_script:
   - echo "Reports (in $reportDir):";ls $reportDir
