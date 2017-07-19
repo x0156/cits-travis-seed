@@ -40,9 +40,11 @@ elif is_e2e_cits; then
   echo "running cits e2e tests"
   TEST=$(resolve $TEST)
   CITS -run $TEST  -dont_launch_report -standalone_report -setEnv $citsEnv
-  export reportDir=$(CITS  $TEST -latest_exe_loc)
+  reportDir=$(CITS  $TEST -latest_exe_loc)
   CITS  $TEST -latest_exe_data_raw > report.json
   failed=$(CITS  $TEST -latest_exe nofailTests)
+  echo "Reports (in $reportDir):"
+  ls $reportDir
   if [ $failed -ne 0 ]; then
    (./fail $failed Test/s failed);
   fi

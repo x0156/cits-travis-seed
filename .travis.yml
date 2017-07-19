@@ -41,4 +41,4 @@ script:
   - ./scripts/ci/travis-script.sh
   
 after_script:
-  - echo "Reports (in $reportDir):";ls $reportDir
+  - echo Done!
