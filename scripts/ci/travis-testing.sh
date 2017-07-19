@@ -15,6 +15,7 @@ cd $(dirname $0)/../..
 
 # Include sources.
 source scripts/ci/sources-mode.sh
+source ./scripts/ci/env.sh
 
 # Get commit diff
 if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
