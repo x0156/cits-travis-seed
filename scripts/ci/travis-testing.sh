@@ -29,7 +29,7 @@ if [[ ${fileDiff} =~ ^(.*\.md\s*)*$ ]] && (is_e2e || is_unit); then
   exit 0
 fi
 
-elif is_e2e; then
+if is_e2e; then
   echo "e2e tests!"
   exit 0
 elif is_e2e_cits; then
