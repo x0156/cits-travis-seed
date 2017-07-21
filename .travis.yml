@@ -13,12 +13,15 @@ addons:
 env:
   global:
     - workingDir=$(pwd)    
-  matrix:
-    - MODE=e2e_cits TEST=smoke
-    - MODE=e2e_cits TEST=basic_search_cortanna
 
 jobs:
   include:
+    - stage: Verify
+      script: "echo compile_n_verify"
+    - stage: Test
+      env:
+        - MODE=e2e_cits TEST=smoke
+        - MODE=e2e_cits TEST=basic_search_cortanna
     - stage: Deploy
       env: "DEPLOY_MODE=build"
 
