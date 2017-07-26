@@ -8,7 +8,7 @@ TAG=v1.0.1
 REPO=x0156/Cognizant-Intelligent-Test-Scripter
 ROOT=$HOME/lib/cits
 BINARY=$HOME/bin/CITS
-CHROME_DRIVER_VERSION=2.30
+CHROME_DRIVER_VERSION=2.31
 #download
 curl -O -L "https://github.com/$REPO/releases/download/$TAG/$NAME-$VERSION-setup.zip"
 #extract
